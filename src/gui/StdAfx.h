@@ -5,6 +5,9 @@
 
 #define	WINVER	0x501
 
+#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_NON_CONFORMING_SWPRINTFS
+
 #define VC_EXTRALEAN		// Exclude rarely-used stuff from Windows headers
 #define NTGUI
 #include <afxwin.h>         // MFC core and standard components

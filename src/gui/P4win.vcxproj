@@ -99,10 +99,10 @@
     </ClCompile>
     <Link>
       <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>wsock32.lib;version.lib;winmm.lib;shlwapi.lib;libclient.lib;librpc.lib;libsupp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>wsock32.lib;version.lib;winmm.lib;shlwapi.lib;libclient.lib;librpc.lib;libsupp.lib;libp4sslstub.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Unicode_Debug/P4win.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>$(P4APIDIR)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(P4APIDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>.\Unicode_Debug/P4win.pdb</ProgramDatabaseFile>

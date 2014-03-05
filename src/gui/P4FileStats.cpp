@@ -167,7 +167,7 @@ BOOL CP4FileStats::Create(StrDict *client)
 	    char varNam2[] = "otherAction   ";
 	    for(m_OtherOpens=m_OtherOpenAction=0; m_OtherOpens < 100; m_OtherOpens++)
 	    {
-		    itoa(m_OtherOpens, varName+9, 10);
+		    _itoa(m_OtherOpens, varName+9, 10);
 		    if( (str=client->GetVar( varName )) == 0 )
 			    break;
 		    else
@@ -181,7 +181,7 @@ BOOL CP4FileStats::Create(StrDict *client)
 			    }
 			    if (m_OtherOpenAction != F_DELETE)
 			    {
-				    itoa(m_OtherOpens, varNam2+11, 10);
+				    _itoa(m_OtherOpens, varNam2+11, 10);
 				    if ( (str=client->GetVar( varNam2 )) != 0)
 				    {
 					    for(i=F_UNKNOWNACTION; actions[i]; i++)

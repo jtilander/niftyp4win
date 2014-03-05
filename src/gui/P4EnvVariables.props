@@ -4,6 +4,8 @@
   <PropertyGroup Label="UserMacros">
     <P4APIDIR Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../api/p4api-2013.3.784164-vs2010_dyn_vsdebug</P4APIDIR>
     <P4APIDIR Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../api/p4api-2013.3.784164-vs2010_dyn</P4APIDIR>
+    <P4APIDIR Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">../../api/p4api-2013.3.784164-vs2010_dyn_vsdebug</P4APIDIR>
+    <P4APIDIR Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">../../api/p4api-2013.3.784164-vs2010_dyn</P4APIDIR>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup />
