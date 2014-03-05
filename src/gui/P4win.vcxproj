@@ -1307,6 +1307,7 @@
     <ClInclude Include="p4api\P4CommandStatus.h" />
   </ItemGroup>
   <ItemGroup>
+    <Manifest Include="res\P4Win.manifest" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="P4Win409\P4Win409.vcxproj">
