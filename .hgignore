@@ -11,6 +11,8 @@ syntax: glob
 # switch to regexp syntax.
 syntax: regexp
 
+^Unicode_Release
+^Unicode_Debug
 ^src/gui/Debug
 ^src/gui/Release
 ^src/gui/Unicode_Release
