@@ -320,7 +320,8 @@ BOOL CP4Command::InitConnection()
 	if(m_IsChildTask)
 	{
 		m_pClient->SetVersion(((CP4winApp *) AfxGetApp())->m_version);
-		m_pClient->SetVar( "prog", "P4Win");
+		m_pClient->SetVar( "prog", "NiftyP4Win");
+		m_pClient->SetVar("enableStreams");
 		return TRUE;
 	}
 	else
@@ -343,7 +344,10 @@ BOOL CP4Command::InitConnection()
 
 			// Notify that we are p4win
 			m_pClient->SetVersion(((CP4winApp *) AfxGetApp())->m_version);
-			m_pClient->SetVar( "prog", "P4Win");
+			m_pClient->SetVar( "prog", "NiftyP4Win");
+			
+			// Enable the streams
+			m_pClient->SetVar("enableStreams");
 
 			// Record the permanent client if we havent already, then
 			// set the client to the active client

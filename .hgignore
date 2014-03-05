@@ -1,6 +1,9 @@
 # use glob syntax.
 syntax: glob
 
+
+*.orig
+
 # Various visual studio byproducts
 *.suo
 *.sdf
@@ -22,3 +25,4 @@ syntax: regexp
 ^src/gui/P4Win409
 ^src/gui/P4Win411
 /ipch/
+^ipch
