@@ -144,7 +144,7 @@
     </ClCompile>
     <Link>
       <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>wsock32.lib;version.lib;winmm.lib;shlwapi.lib;libclient.lib;librpc.lib;libsupp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>wsock32.lib;version.lib;winmm.lib;shlwapi.lib;libclient.lib;librpc.lib;libsupp.lib;libp4sslstub.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Debug/P4win.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>$(P4APIDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -189,7 +189,7 @@
     </ClCompile>
     <Link>
       <AdditionalOptions>/MACHINE:X86 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>wsock32.lib;version.lib;winmm.lib;shlwapi.lib;libclient.lib;librpc.lib;libsupp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>wsock32.lib;version.lib;winmm.lib;shlwapi.lib;libclient.lib;librpc.lib;libsupp.lib;libp4sslstub.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Release/P4win.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>$(P4APIDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -1307,7 +1307,6 @@
     <ClInclude Include="p4api\P4CommandStatus.h" />
   </ItemGroup>
   <ItemGroup>
-    <Manifest Include="res\P4Win.manifest" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="P4Win409\P4Win409.vcxproj">

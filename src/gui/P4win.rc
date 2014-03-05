@@ -112,7 +112,8 @@ END
 // RT_MANIFEST
 //
 
-1                       RT_MANIFEST             "res\\P4Win.manifest"
+// [jt] -- do we need to include the manifest here twice? It seems to be referenced from the actual project file as well..
+//1                       RT_MANIFEST             "res\\P4Win.manifest"
 #endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 

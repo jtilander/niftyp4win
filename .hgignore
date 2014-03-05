@@ -1,0 +1,22 @@
+# use glob syntax.
+syntax: glob
+
+# Various visual studio byproducts
+*.suo
+*.sdf
+*.opensdf
+*.vcxproj.user
+
+
+# switch to regexp syntax.
+syntax: regexp
+
+^src/gui/Debug
+^src/gui/Release
+^src/gui/Unicode_Release
+^src/gui/Unicode_Debug
+^src/gui/hlp
+^src/gui/P4win.aps
+^src/gui/P4Win409
+^src/gui/P4Win411
+/ipch/
