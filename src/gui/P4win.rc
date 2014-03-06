@@ -90,14 +90,14 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "Comments", "Requires Perforce 98.2.7488 or higher server"
-            VALUE "CompanyName", "Perforce Software"
-            VALUE "FileDescription", "Perforce Windows Client"
-            VALUE "FileVersion", "2008.1 BETA 17.6239"
-            VALUE "InternalName", "P4Win"
+            VALUE "CompanyName", "Perforce Software & Jim Tilander"
+            VALUE "FileDescription", "Nifty Perforce Windows Client"
+            VALUE "FileVersion", "2014.1 BETA 20.0000"
+            VALUE "InternalName", "NiftyP4Win"
             VALUE "LegalCopyright", "Copyright © 1997, 2008 Perforce Software"
             VALUE "OriginalFilename", "P4Win.EXE"
-            VALUE "ProductName", "Perforce Windows GUI Client "
-            VALUE "ProductVersion", "2008.1 BETA 17.6239"
+            VALUE "ProductName", "Perforce Windows GUI Client (NiftyP4Win)"
+            VALUE "ProductVersion", "2014.1 BETA 20.0000"
         END
     END
     BLOCK "VarFileInfo"

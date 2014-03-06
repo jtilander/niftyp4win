@@ -97,9 +97,9 @@ BEGIN
     IDS_MISSINGVERSIONERROR " ﬁ∞ºﬁÆ›èÓïÒÇ™å©Ç¬Ç©ÇËÇ‹ÇπÇÒ"
     IDS_RESOURCEDLL         "ÿø∞ΩDLL"
     IDS_BUILD_NUMBER_n      "ÀﬁŸƒﬁ %1!d!"
-    IDS_WWW_ADDRESS         "http://www.perforce.com"
-    IDS_EMAIL_ADDRESS       "perforce@toyo.co.jp"
-    IDS_EMAIL_SUBJECT       "Perforce customer feedback"
+    IDS_WWW_ADDRESS         "https://bitbucket.org/jtilander/niftyp4win/"
+    IDS_EMAIL_ADDRESS       "jim_perforce@tilander.org"
+    IDS_EMAIL_SUBJECT       "[NiftyP4Win] Feedback"
 END
 
 STRINGTABLE 

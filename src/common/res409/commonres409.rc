@@ -124,9 +124,9 @@ BEGIN
     IDS_MISSINGVERSIONERROR "missing version info"
     IDS_RESOURCEDLL         "Resource DLL"
     IDS_BUILD_NUMBER_n      "Build %1!d!"
-    IDS_WWW_ADDRESS         "http://www.perforce.com"
-    IDS_EMAIL_ADDRESS       "support@perforce.com"
-    IDS_EMAIL_SUBJECT       "Perforce customer feedback"
+    IDS_WWW_ADDRESS         "https://bitbucket.org/jtilander/niftyp4win/"
+    IDS_EMAIL_ADDRESS       "jim_perforce@tilander.org"
+    IDS_EMAIL_SUBJECT       "[NiftyP4Win] Feedback"
 END
 
 STRINGTABLE 

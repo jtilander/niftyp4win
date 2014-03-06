@@ -3253,13 +3253,13 @@ BEGIN
         BEGIN
             VALUE "Comments", "Requires Perforce 98.2.7488 or higher server"
             VALUE "CompanyName", "Perforce Software"
-            VALUE "FileDescription", "Perforce Windows Client, English (U.S.) resource dll"
-            VALUE "FileVersion", "2008.1 BETA 17.6239"
-            VALUE "InternalName", "P4Win409"
+            VALUE "FileDescription", "Nifty Perforce Windows Client, English (U.S.) resource dll"
+            VALUE "FileVersion", "2014.1 BETA 20.0000"
+            VALUE "InternalName", "NiftyP4Win409"
             VALUE "LegalCopyright", "Copyright © 1997, 2008 Perforce Software"
             VALUE "OriginalFilename", "P4Win409.DLL"
-            VALUE "ProductName", "Perforce Windows GUI Client "
-            VALUE "ProductVersion", "2008.1 BETA 17.6239"
+            VALUE "ProductName", "Perforce Windows GUI Client (NiftyP4Win)"
+            VALUE "ProductVersion", "2014.1 BETA 20.0000"
         END
     END
     BLOCK "VarFileInfo"
@@ -4931,7 +4931,7 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_PERFORCE_PORT_s_CLIENT_s_USER_s "%1!s! %2!s! %3!s! - Perforce P4Win"
+    IDS_PERFORCE_PORT_s_CLIENT_s_USER_s "%1!s! %2!s! %3!s! - NiftyP4Win"
     IDS_PORT_s              "Port: %1!s!"
     IDS_CLIENT_s            "Client: %1!s!"
     IDS_USER_s              "User: %1!s!"
