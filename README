@@ -1,14 +1,21 @@
 NiftyWin Project
 (A fork of the p4win client from Perforce Software)
 
-Original link here:
+Perforce open sourced the code for p4win a couple of days back, which opens up the
+possibility to make some enhancements to the application to bring it inline with
+the new features that have been deployed after the product was discontinued, features
+like the streams and shelving. The original release for the open source project can be
+found here: https://swarm.workshop.perforce.com/projects/perforce-software-p4win
 
-https://swarm.workshop.perforce.com/files/guest/perforce_software/p4win#history
+
+
+Jim Tilander
+March 2014, Redondo Beach, CA
 
 
 
 
+Contributors:
+	Jim Tilander (jim at tilander.org)
 
-Streams KB:
 
-http://answers.perforce.com/articles/KB_Article/Streams-and-P4API
