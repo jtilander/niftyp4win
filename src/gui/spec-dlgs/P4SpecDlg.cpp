@@ -2266,7 +2266,15 @@ BOOL CP4SpecDlg::SetControls()
 				break;
 
 			case SDT_SELECT:
-				GetComboBoxValues( value, aPresets );
+				if( tag == _T("Type") && m_SpecType == P4CHANGE_SPEC )
+				{
+					// For now, do nothing -- i.e. make sure that we get the focus on the description in the default changelist dialog.
+					continue;
+				}
+				else
+				{
+					GetComboBoxValues( value, aPresets );
+				}
 				break;
 
 			default:
