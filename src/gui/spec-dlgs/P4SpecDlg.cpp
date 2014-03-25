@@ -2266,15 +2266,7 @@ BOOL CP4SpecDlg::SetControls()
 				break;
 
 			case SDT_SELECT:
-				if( tag == _T("Type") && m_SpecType == P4CHANGE_SPEC )
-				{
-					// For now, do nothing -- i.e. make sure that we get the focus on the description in the default changelist dialog.
-					continue;
-				}
-				else
-				{
-					GetComboBoxValues( value, aPresets );
-				}
+				GetComboBoxValues( value, aPresets );
 				break;
 
 			default:
@@ -2365,6 +2357,13 @@ BOOL CP4SpecDlg::SetControls()
 						  m_SpecData.GetIndentOf( i ), m_SpecData.GetwCodeOf( i ),
 						  m_SpecData.GetLiOffsetOf( i )); 
 			aPresets.RemoveAll( );
+
+			if( _T("Type") ==  tag && m_SpecType == P4CHANGE_SPEC )
+			{
+				m_SetFocusHere = TRUE;
+				m_pFocusControl = NULL;
+			}
+
 		}
 		else
 			AddEditBox( i );
