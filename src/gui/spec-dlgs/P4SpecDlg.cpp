@@ -2687,18 +2687,27 @@ BOOL CP4SpecDlg::UpdateSpec( )
 	m_NewPassword= m_OrigPassword;
 	m_Tag.Empty();
 
-	int i;
-	for( i = 0; i< m_specControls.GetSize(); i++ ) 
+	int i, j;
+	for( i = 0, j=0; i< m_specControls.GetSize(); i++ ) 
 	{
-		pControl = m_specControls[ i ].control;
+		pControl = m_specControls[ j ].control;
 		// skip over any dummy controls
 		if(!pControl)
+		{
+			j++;
 			continue;
-		value = GetNewValue( pControl, i );
+		}
+		
 		tag = m_SpecData.GetTagOf( i );
 		type = m_SpecData.GetTypeOf( i );
 		words = m_SpecData.GetNWordsOf ( i );
 		required = m_SpecData.GetRequiredOf ( i );
+
+		if( tag == _T("Type") && m_SpecType == P4CHANGE_SPEC )
+			continue;
+
+		value = GetNewValue( pControl, j );
+		j++;
 
 		//  strip out any leading or trailing whitespace
 		//	unless this is a TEXT field and we are to preserve
