@@ -322,6 +322,7 @@ BOOL CP4Command::InitConnection()
 		m_pClient->SetVersion(((CP4winApp *) AfxGetApp())->m_version);
 		m_pClient->SetVar( "prog", "NiftyP4Win");
 		m_pClient->SetVar("enableStreams");
+		m_pClient->SetProtocol("enableStreams", "");
 		return TRUE;
 	}
 	else
@@ -348,6 +349,7 @@ BOOL CP4Command::InitConnection()
 			
 			// Enable the streams
 			m_pClient->SetVar("enableStreams");
+			m_pClient->SetProtocol("enableStreams", "");
 
 			// Record the permanent client if we havent already, then
 			// set the client to the active client
