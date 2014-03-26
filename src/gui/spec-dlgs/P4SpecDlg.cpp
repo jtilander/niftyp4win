@@ -2693,6 +2693,7 @@ BOOL CP4SpecDlg::UpdateSpec( )
 		// skip over any dummy controls
 		if(!pControl)
 			continue;
+		
 		value = GetNewValue( pControl, i );
 		tag = m_SpecData.GetTagOf( i );
 		type = m_SpecData.GetTypeOf( i );
