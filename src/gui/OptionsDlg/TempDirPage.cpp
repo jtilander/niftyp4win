@@ -205,9 +205,10 @@ void CTempDirPage::OnBrowse()
 	// Set the dlg caption
     CString title = LoadStringResource(IDS_SELECT_DEFAULT_TEXT_EDITOR_CAPTION);
 	fDlg.m_ofn.lpstrTitle = title;
-	// We dont need no stinking file title
-	fDlg.m_ofn.lpstrFileTitle=NULL;
-	
+	TCHAR dummy[MAX_PATH];
+	fDlg.m_ofn.nMaxFileTitle = MAX_PATH;
+	fDlg.m_ofn.lpstrFileTitle = dummy;
+
 	// Set the initial directory
 	CString initDir = _T("\\");
 	fDlg.m_ofn.lpstrInitialDir=initDir;

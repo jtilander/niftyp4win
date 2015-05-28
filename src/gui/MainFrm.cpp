@@ -2680,9 +2680,10 @@ void CMainFrame::OnFileAddSetDir(LPTSTR lpInitDir /*= NULL*/)
 	// Set the dlg caption
 	CString title=LoadStringResource(IDS_ADD_FILES_TO_SOURCE_CONTROL);
 	fDlg.m_ofn.lpstrTitle=title;
-	// We dont need no stinking file title
-	fDlg.m_ofn.lpstrFileTitle=NULL;
-	
+	TCHAR dummy[MAX_PATH];
+	fDlg.m_ofn.nMaxFileTitle = MAX_PATH;
+	fDlg.m_ofn.lpstrFileTitle = dummy;
+
 	// Set the initial directory
 	TCHAR initdir[MAX_PATH+1];
 	if (lpInitDir && *lpInitDir)
@@ -4424,9 +4425,10 @@ void CMainFrame::OnToolsImport()
 	// Set the dlg caption
     CString title = LoadStringResource(IDS_TOOLSDLG_READ_CUSTOM_TOOLS_TITLE);
 	fDlg.m_ofn.lpstrTitle = title;
-	// We dont need no stinking file title
-	fDlg.m_ofn.lpstrFileTitle=NULL;
-	
+	TCHAR dummy[MAX_PATH];
+	fDlg.m_ofn.nMaxFileTitle = MAX_PATH;
+	fDlg.m_ofn.lpstrFileTitle = dummy;
+
 	// Set the initial directory
 	fDlg.m_ofn.lpstrInitialDir=GET_P4REGPTR()->GetTempDir();
 
@@ -4753,9 +4755,10 @@ void CMainFrame::OnToolsExport()
 	// Set the dlg caption
     CString title = LoadStringResource(IDS_TOOLS_EXPORT_TITLE);
 	fDlg.m_ofn.lpstrTitle=title;
-	// We dont need no stinking file title
-	fDlg.m_ofn.lpstrFileTitle=NULL;
-	
+	TCHAR dummy[MAX_PATH];
+	fDlg.m_ofn.nMaxFileTitle = MAX_PATH;
+	fDlg.m_ofn.lpstrFileTitle = dummy;
+
 	// Set the initial directory
 	fDlg.m_ofn.lpstrInitialDir=GET_P4REGPTR()->GetTempDir();
 

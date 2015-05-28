@@ -448,9 +448,11 @@ void CBookmarks::OnImport()
 	// Set the dlg caption
     CString title = LoadStringResource(IDS_BKMKSDLG_READ_BKMKS_TITLE);
 	fDlg.m_ofn.lpstrTitle = title;
-	// We dont need no stinking file title
-	fDlg.m_ofn.lpstrFileTitle=NULL;
 	
+	TCHAR dummy[MAX_PATH];
+	fDlg.m_ofn.nMaxFileTitle = MAX_PATH;
+	fDlg.m_ofn.lpstrFileTitle = dummy;
+
 	// Set the initial directory
 	fDlg.m_ofn.lpstrInitialDir=GET_P4REGPTR()->GetTempDir();
 
@@ -665,17 +667,21 @@ void CBookmarks::OnExport()
 		MainFrame()->m_osVer.dwMajorVersion < 5 ? OPENFILENAME_SIZE_VERSION_400 : sizeof(OPENFILENAME)); 
 	
 	TCHAR buf[LONGPATH+1];
+	
 
 	lstrcpy(buf, LoadStringResource(IDS_BKMK_EXPORT_DEFAULT_FILE));  
 
     fDlg.m_ofn.lpstrFile= buf; 
 	fDlg.m_ofn.nMaxFile= LONGPATH; 
+	
+	TCHAR dummy[MAX_PATH];
+	fDlg.m_ofn.nMaxFileTitle = MAX_PATH;
+	fDlg.m_ofn.lpstrFileTitle = dummy;
 
 	// Set the dlg caption
     CString title = LoadStringResource(IDS_BKMK_EXPORT_TITLE);
 	fDlg.m_ofn.lpstrTitle=title;
-	// We dont need no stinking file title
-	fDlg.m_ofn.lpstrFileTitle=NULL;
+	
 	
 	// Set the initial directory
 	fDlg.m_ofn.lpstrInitialDir=GET_P4REGPTR()->GetTempDir();
