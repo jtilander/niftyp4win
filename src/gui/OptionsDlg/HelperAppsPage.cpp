@@ -291,16 +291,17 @@ void CHelperAppsPage::Browse(CString &filename, LPCTSTR title)
 		MainFrame()->m_osVer.dwMajorVersion < 5 ? OPENFILENAME_SIZE_VERSION_400 : sizeof(OPENFILENAME)); 
 	
 	TCHAR buf[MAX_PATH];
+	TCHAR dummy[MAX_PATH];
 	// Zero 1st char so commdlg knows we aren't providing a default filename
 	buf[0]=_T('\0');  
 
     fDlg.m_ofn.lpstrFile= buf; 
 	fDlg.m_ofn.nMaxFile= MAX_PATH; 
+	fDlg.m_ofn.nMaxFileTitle = MAX_PATH;
 
 	// Set the dlg caption
 	fDlg.m_ofn.lpstrTitle=title;
-	// We dont need no stinking file title
-	fDlg.m_ofn.lpstrFileTitle=NULL;
+	fDlg.m_ofn.lpstrFileTitle=dummy;
 	
 	// Set the initial directory
 	CString initDir = _T("\\");

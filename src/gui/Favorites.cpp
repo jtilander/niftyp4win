@@ -432,9 +432,11 @@ void CFavorites::OnImport()
 	// Set the dlg caption
     CString title = LoadStringResource(IDS_FAVSDLG_READ_FAVS_TITLE);
 	fDlg.m_ofn.lpstrTitle = title;
-	// We dont need no stinking file title
-	fDlg.m_ofn.lpstrFileTitle=NULL;
-	
+
+	TCHAR dummy[MAX_PATH];
+	fDlg.m_ofn.nMaxFileTitle = MAX_PATH;
+	fDlg.m_ofn.lpstrFileTitle = dummy;
+
 	// Set the initial directory
 	fDlg.m_ofn.lpstrInitialDir=GET_P4REGPTR()->GetTempDir();
 
@@ -640,9 +642,11 @@ void CFavorites::OnExport()
 	// Set the dlg caption
     CString title = LoadStringResource(IDS_FAV_EXPORT_TITLE);
 	fDlg.m_ofn.lpstrTitle=title;
-	// We dont need no stinking file title
-	fDlg.m_ofn.lpstrFileTitle=NULL;
-	
+
+	TCHAR dummy[MAX_PATH];
+	fDlg.m_ofn.nMaxFileTitle = MAX_PATH;
+	fDlg.m_ofn.lpstrFileTitle = dummy;
+
 	// Set the initial directory
 	fDlg.m_ofn.lpstrInitialDir=GET_P4REGPTR()->GetTempDir();
 
