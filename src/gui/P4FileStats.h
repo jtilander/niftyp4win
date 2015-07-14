@@ -19,7 +19,6 @@ enum FileAction
 	F_BRANCH,
 	F_INTEGRATE,
 	F_IMPORT,
-	
 	F_MAXACTION
 };
 
