@@ -2106,7 +2106,7 @@ void CDepotTreeCtrl::ProcessGetListResults(UINT command, CStringList *list)
 			// Rule: Only show deleted file if user has opted to see deleted files
 			// Exception: If the head rev is deleted and user has a rev < head, then
 			//            we always show the file
-			if(command == WM_P4UNGET && fs->GetHeadAction() == F_DELETE && 
+			if (command == WM_P4UNGET && fs->GetHeadAction() == F_DELETE &&
 				!GET_P4REGPTR()->ShowDeleted() && fs->GetHaveRev() == 0 ) 
 			{
 						DeleteLeaf(item);
@@ -2361,7 +2361,7 @@ LRESULT CDepotTreeCtrl::OnP4ExpandTree ( WPARAM wParam, LPARAM lParam )
 			ASSERT_KINDOF(CP4FileStats, stats);
 
 			// Just another successfully retrieved row - do NOT delete pCmd
-			if(stats->GetHeadAction() != F_DELETE || GET_P4REGPTR()->ShowDeleted() || stats->GetHaveRev() != 0 )
+			if (stats->GetHeadAction() != F_DELETE || GET_P4REGPTR()->ShowDeleted() || stats->GetHaveRev() != 0)
 			{
 				InsertFromFstat(stats);
 				iNode= m_LastPathItem;
@@ -2504,7 +2504,7 @@ LRESULT CDepotTreeCtrl::OnP4DirStat(WPARAM wParam, LPARAM lParam)
 		ASSERT_KINDOF(CP4FileStats, stats);
 
 		// Just another successfully retrieved row - do NOT delete pCmd
-		if(stats->GetHeadAction() != F_DELETE || GET_P4REGPTR()->ShowDeleted() || stats->GetHaveRev() != 0 )
+		if (stats->GetHeadAction() != F_DELETE || GET_P4REGPTR()->ShowDeleted() || stats->GetHaveRev() != 0)
 		{
 			InsertFromFstat(stats);
 			if( m_LastPathItem != NULL && m_LastPathItem != TVI_ROOT)
@@ -7021,7 +7021,7 @@ BOOL CDepotTreeCtrl::IsDeleted(HTREEITEM currentItem)
 		if(TreeView_GetItem(m_hWnd, &item ) && ITEM_IS_A_FILE_NOT_A_SUBDIR)
 		{
 			fs=m_FSColl.GetStats((int) item.lParam);
-			if ((fs->GetHeadAction() == F_DELETE) && (fs->GetHaveRev() == 0))
+			if (fs->GetHeadAction() == F_DELETE && (fs->GetHaveRev() == 0))
 				deleted=TRUE;
 		}
 	}
@@ -7631,7 +7631,7 @@ void CDepotTreeCtrl::PrepareForViewer()
 	ASSERT(m_ViewItem != NULL);
 	DWORD index=GetLParam(m_ViewItem);
 	CP4FileStats *fs=m_FSColl.GetStats(index);
-	if ((fs->GetHeadAction() == F_DELETE) && (fs->GetHaveRev() == 0))
+	if (fs->GetHeadAction() == F_DELETE && (fs->GetHaveRev() == 0))
 	{
 		MessageBeep(0);
 		return;

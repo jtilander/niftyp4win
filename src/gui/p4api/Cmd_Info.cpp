@@ -86,7 +86,9 @@ void CCmd_Info::OnOutputInfo(char level, LPCTSTR data, LPCTSTR msg)
         ;   // we know about it, but don't care about it
     else if(tag == _T("Server license-ip"))
         ;   // we know about it, but don't care about it
-    else if(tag == _T("Client unknown."))
+	else if (tag == _T("ServerID"))
+		;   // we know about it, but don't care about it
+	else if (tag == _T("Client unknown."))
         m_Info.m_Error = LoadStringResource(IDS_CLIENT_UNKNOWN_TO_SERVER);
     else
     {

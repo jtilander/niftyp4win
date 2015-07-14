@@ -19,19 +19,53 @@ static char THIS_FILE[] = __FILE__;
 
 // File actions, MUST match the enums in P4FileStats.h
 
-static LPCTSTR actions[]=
+struct ActionMap
 {
-	_T("none"),  // not a Perforce type, just padding to match the enum in header
-	_T("unknown"),
-	_T("add"),
-	_T("edit"),
-	_T("delete"),
-	_T("branch"),
-	_T("integrate"),
-	_T("import"),
-	_T("no action"),
-	0
+	TCHAR* name;
+	FileAction action;
 };
+
+static ActionMap actionMap[] = 
+{
+	{ _T("none"),			F_NOACTION },
+	{ _T("unknown"), 		F_UNKNOWNACTION },
+	{ _T("add"), 			F_ADD },
+	{ _T("edit"), 			F_EDIT },
+	{ _T("delete"), 		F_DELETE },
+	{ _T("branch"), 		F_BRANCH },
+	{ _T("integrate"), 		F_INTEGRATE },
+	{ _T("import"), 		F_IMPORT },
+	{ _T("move/delete"), 	F_DELETE },
+	{ _T("move/add"), 		F_ADD },
+	{ _T("no action"), 		F_NOACTION },
+	{ 0, 					F_NOACTION},
+};
+
+FileAction actionByName(const TCHAR* name)
+{
+	for(int i=F_UNKNOWNACTION; actionMap[i].name; i++)
+	{
+		if( 0 == _tcscmp(actionMap[i].name, name) )
+		{
+			return actionMap[i].action;
+		}
+	}
+
+	return F_NOACTION;
+}
+
+TCHAR* nameByAction(FileAction action)
+{
+	for(int i=F_UNKNOWNACTION; actionMap[i].name; i++)
+	{
+		if( action == actionMap[i].action )
+		{
+			return actionMap[i].name;
+		}
+	}
+
+	return _T("none");
+}
 
 // File types, MUST match the enums in P4FileStats.h
 
@@ -184,14 +218,7 @@ BOOL CP4FileStats::Create(StrDict *client)
 				    _itoa(m_OtherOpens, varNam2+11, 10);
 				    if ( (str=client->GetVar( varNam2 )) != 0)
 				    {
-					    for(i=F_UNKNOWNACTION; actions[i]; i++)
-					    {
-						    if(_tcscmp(actions[i], CharToCString(str->Value()))==0)
-						    {
-							    m_OtherOpenAction=(BYTE) i;
-							    break;
-						    }
-					    }
+						m_OtherOpenAction = actionByName(CharToCString(str->Value()));
 				    }
 			    }
 		    }
@@ -224,27 +251,13 @@ BOOL CP4FileStats::Create(StrDict *client)
 
 	if( (str= client->GetVar( "headAction" )) != NULL)
 	{
-		for(i=F_UNKNOWNACTION; actions[i]; i++)
-		{
-			if(_tcscmp(actions[i], CharToCString(str->Value()))==0)
-			{
-				m_HeadAction=(BYTE) i;
-				break;
-			}
-		}
+		m_HeadAction = actionByName(CharToCString(str->Value()));
 	}
 	ASSERT(client->GetVar("headAction")==NULL || m_HeadAction);
 
 	if( (str= client->GetVar( "action" )) != NULL)
 	{
-		for(i=F_UNKNOWNACTION; actions[i]; i++)
-		{
-			if(_tcscmp(actions[i], CharToCString(str->Value()))==0)
-			{
-				m_MyOpenAction= (BYTE) i;
-				break;
-			}
-		}
+		m_MyOpenAction = actionByName(CharToCString(str->Value()));
 	}
 	ASSERT(client->GetVar("action")==NULL || m_MyOpenAction);
 	if (!m_HaveRev && !m_HeadRev && (m_MyOpenAction == F_ADD || m_MyOpenAction == F_BRANCH))
@@ -354,15 +367,7 @@ BOOL CP4FileStats::Create(LPCTSTR openRow)
 	CString ModeText=info.Left(info.Find(_T(" ")));
 	
 	// File open action
-	int openAction=F_UNKNOWNACTION;
-	for(int i=F_UNKNOWNACTION; actions[i]; i++)
-	{
-		if(_tcscmp(actions[i], ModeText)==0)
-		{
-			openAction=i;
-			break;
-		}
-	}
+	int openAction = actionByName(ModeText);
 
 	// File change number
 	info=info.Mid(ModeText.GetLength()+1);
@@ -508,11 +513,11 @@ void CP4FileStats::SetOtherOpens(int num)
 	}
 }
 
-void CP4FileStats::SetHeadAction(int action)
+/*void CP4FileStats::SetHeadAction(int action)
 {
 	ASSERT(action >= 0 && action < F_MAXACTION);
 	m_HeadAction= (BYTE) action;
-}
+}*/
 
 void CP4FileStats::SetHeadType(int type)
 {
@@ -606,8 +611,7 @@ void CP4FileStats::SetOtherUsers(LPCTSTR userlist)
 CString CP4FileStats::GetActionStr(int action) const
 {
 	ASSERT(action >=0 && action < F_MAXACTION);
-	
-	return CString(actions[action]);
+	return CString(nameByAction((FileAction)action));
 }
 
 CString CP4FileStats::GetDepotDir() const
@@ -696,14 +700,14 @@ CString CP4FileStats::GetFormattedChangeFile(BOOL showFileType, BOOL showOpenAct
 		CString type = (m_Type == _T("unknown")) ? m_HeadType : m_Type;
 		if(showOpenAction)
 			temp.FormatMessage(IDS_FSTAT_s_n_s_s, m_DepotPath, m_HaveRev, 
-								type, actions[openAction]);
+								type, nameByAction((FileAction)openAction));
 		else
 			temp.FormatMessage(IDS_FSTAT_s_n_s, m_DepotPath, m_HaveRev, type);
 	}
 	else
 	{
 		if(showOpenAction)
-			temp.FormatMessage(IDS_FSTAT_s_n_s, m_DepotPath, m_HaveRev, actions[openAction]);
+			temp.FormatMessage(IDS_FSTAT_s_n_s, m_DepotPath, m_HaveRev, nameByAction((FileAction)openAction));
 		else
 			temp.FormatMessage(IDS_FSTAT_s_n, m_DepotPath, m_HaveRev);
 	}	
