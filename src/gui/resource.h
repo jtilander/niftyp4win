@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by c:\workspac\main\p4-win\gui\P4Win409\P4Win409.rc
+// Used by C:\work\niftyp4win\src\gui\P4Win409\P4Win409.rc
 //
 #define IDC_NOT_USED                    1
 #define P4_INT_MINOR                    1
@@ -1811,7 +1811,7 @@
 #define IDS_FAILEDREGWRITE              2226
 #define IDS_INSERTING_CLIENTS           2227
 #define IDS_INSERTING_LABELS            2228
-#define	IDS_USERCLIENTROOTCWDADDRVERSERVERADDRDATEVERLICENSEROOTOS	2229
+#define IDS_USERCLIENTROOTCWDADDRVERSERVERADDRDATEVERLICENSEROOTOS 2229
 #define P4_INT_LBUILD                   6053
 #define ID_PERFORCE_INFO                32771
 #define ID_PERFORCE_OPTIONS             32772
