@@ -2861,19 +2861,23 @@ BOOL CP4SpecDlg::UpdateSpec( )
 			;//they are taken care of below
 		else if ( type == SDT_LLIST )
 			m_SpecData.UpdateLList( m_SpecData.m_aList, value );
-		else if ( type == SDT_WLIST ) //views and a possible user defined one
+		else if (type == SDT_WLIST) //views and a possible user defined one
 		{
 			// remove any occurances of multiple blank lines since the server will reject them
-			if ( tag == _T("View") )
+			if (tag == _T("View"))
 				while (value.Replace(_T("\r\n\r\n"), _T("\r\n")))
 					;
-			m_SpecData.UpdateWordList( words, value );
-			if ( m_SpecType == P4CLIENT_SPEC && tag == _T("View") )
+			m_SpecData.UpdateWordList(words, value);
+			if (m_SpecType == P4CLIENT_SPEC && tag == _T("View"))
 				newView = value;
 		}
-		else if( !( tag == _T("Password"
+		else if (tag == _T("Type") && m_SpecType == P4USER_SPEC && value.IsEmpty())
+			m_SpecData.SetValueOf(i, _T("standard")); // If not set, just assume the default.
+		else if (tag == _T("AuthMethod") && m_SpecType == P4USER_SPEC && value.IsEmpty())
+			m_SpecData.SetValueOf(i, _T("perforce")); // If not set, assume the default auth method (we can't really change it anyways)
+		else if (!(tag == _T("Password")
 				 && GET_SERVERLEVEL() < 18 
-				 && GET_SERVERLEVEL() >= 6 ) ) ) // if no need to ignore the hidden password field
+				 && GET_SERVERLEVEL() >= 6 ) ) // if no need to ignore the hidden password field
 			m_SpecData.SetValueOf( i , value ) ;					 //		set the new value
 	}
 
