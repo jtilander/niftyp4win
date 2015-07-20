@@ -73,7 +73,6 @@
       <Culture>0x0411</Culture>
     </ResourceCompile>
     <Manifest>
-      <EnableDpiAwareness>PerMonitorHighDPIAware</EnableDpiAwareness>
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
