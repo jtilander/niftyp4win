@@ -1,0 +1,37 @@
+NiftyWin Project
+(A fork of the p4win client from Perforce Software)
+
+Perforce open sourced the code for p4win a couple of days back, which opens up the
+possibility to make some enhancements to the application to bring it inline with
+the new features that have been deployed after the product was discontinued, features
+like the streams and shelving. The original release for the open source project can be
+found here: https://swarm.workshop.perforce.com/projects/perforce-software-p4win
+
+As a side note, since there are no installers involved in this, just raw executables
+and dlls, the best way to install it would be to simply grab the installer of the last
+known version of p4win and then copy the files over manually. You can find the downloads
+in the peforce ftp site for now:
+
+http://ftp.perforce.com/perforce/r08.1/bin.ntx86/p4winst.exe
+
+Also, if you grab the precompiled executables from this site, you might need the correct
+visual studio runtime libraries, which I believe are these:
+
+https://www.microsoft.com/en-us/download/details.aspx?id=40784
+
+
+If in doubt, the binaries should compile fine with Visual Studio 2013 Community edition, 
+you are going to need the MFC addon libraries here:
+
+https://msdn.microsoft.com/library/dn251007.aspx
+
+
+
+Jim Tilander
+March 2014, Redondo Beach, CA
+
+
+
+
+Contributors:
+	Jim Tilander (jim at tilander.org)
