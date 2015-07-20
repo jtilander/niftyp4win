@@ -20,11 +20,9 @@ visual studio runtime libraries, which I believe are these:
 https://www.microsoft.com/en-us/download/details.aspx?id=40784
 
 
-If in doubt, the binaries should compile fine with Visual Studio 2013 Community edition, 
-you are going to need the MFC addon libraries here:
+If you need to make installers, you are going to have to download the installer update for Visual Studio here:
 
-https://msdn.microsoft.com/library/dn251007.aspx
-
+https://visualstudiogallery.msdn.microsoft.com/9abe329c-9bba-44a1-be59-0fbf6151054d
 
 
 Jim Tilander
