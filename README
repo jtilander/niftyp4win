@@ -20,13 +20,6 @@ visual studio runtime libraries, which I believe are these:
 https://www.microsoft.com/en-us/download/details.aspx?id=40784
 
 
-If in doubt, the binaries should compile fine with Visual Studio 2013 Community edition, 
-you are going to need the MFC addon libraries here:
-
-https://msdn.microsoft.com/library/dn251007.aspx
-
-
-
 Jim Tilander
 March 2014, Redondo Beach, CA
 
