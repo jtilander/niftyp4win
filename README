@@ -9,21 +9,21 @@ found here: https://swarm.workshop.perforce.com/projects/perforce-software-p4win
 
 As a side note, since there are no installers involved in this, just raw executables
 and dlls, the best way to install it would be to simply grab the installer of the last
-known version of p4win and then copy the files over manually. You can find the downloads
-in the peforce ftp site for now:
-
-http://ftp.perforce.com/perforce/r08.1/bin.ntx86/p4winst.exe
+known version of p4v and then copy the following files from the zipfile into the same
+directory. This works even if you have 64 bit p4v. You need to do this, since much of
+the functionality in p4win checks for the existence of certain executables to enable
+some functionality (e.g. timelapse view). I myself simply unzip the project executables
+(p4win.exe etc) into c:\program files\perforce on my 64 bit win7 machine and it works
+great.
 
 Also, if you grab the precompiled executables from this site, you might need the correct
-visual studio runtime libraries, which I believe are these:
+visual studio runtime libraries (VS2013), which I believe are these:
 
 https://www.microsoft.com/en-us/download/details.aspx?id=40784
 
 
 Jim Tilander
 March 2014, Redondo Beach, CA
-
-
 
 
 Contributors:
